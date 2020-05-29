@@ -27,6 +27,7 @@ const Wrapper = styled.div`
   }
 `;
 
+
 const NavBar = () => (
   <Wrapper>
     <div><span>multi</span>task</div>

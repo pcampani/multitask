@@ -19,6 +19,11 @@ const ItemsStyleWrapper = styled.div`
   flex-wrap: wrap;
   justify-content: space-evenly;
 `;
+
+const Wrapper = styled.div`
+  background-color: #efefef;
+
+`;
 // np__added_end unit: list, comp: Items, loc: styling
 
 class Items extends Component {
@@ -61,7 +66,8 @@ class Items extends Component {
     };
 
     return (
-      <Unit
+     <Wrapper>
+        <Unit
         id={ SOURCE_LIST_ID }
         typeRelationships={ LIST_RELATIONSHIPS }
         query={ SOURCE_LIST_QUERY }
@@ -98,6 +104,7 @@ class Items extends Component {
           );
         }}
       </Unit>
+     </Wrapper>
     );
   }
 }

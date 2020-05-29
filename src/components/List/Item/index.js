@@ -21,16 +21,28 @@ const ItemStyleWrapper = styled.div(({
   selected,
   isDeleting,
 }) => `
-  margin: 2em 1em;
+  display: flex;
+  width: 100%;
+  margin: 1em 1em;
   padding: 1.5em;
   border: ${selected ? '1px solid aquamarine': '1px solid white'};
   border-radius: 10px;
   box-shadow: 5px 5px 10px #888888;
-  background-color: ${isDeleting && 'tomato'};
+  background-color: ${isDeleting ? 'tomato' : '#fff'};
   cursor: ${selected ? 'auto' : 'pointer'};
 
   &:hover {
     border: 1px solid aquamarine;
+  }
+
+  div.item {
+    flex: 4;
+  }
+
+  div {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
   }
 `);
 
@@ -156,7 +168,8 @@ function Item({
 
   return (
     <ItemStyleWrapper selected={selected}>
-      { itemValue }
+    <div className="item">{  itemValue }</div>
+    <div>
       <Button
         type="button"
         onClick={() => updateIsEditMode(true)}
@@ -169,11 +182,8 @@ function Item({
       >
         &#128465;
       </Button>
-
-      
-
-
-    </ItemStyleWrapper>
+    </div>
+  </ItemStyleWrapper>
   );
 }
 

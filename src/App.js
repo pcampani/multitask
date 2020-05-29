@@ -22,7 +22,6 @@ const LoginWrapper = styled.div`
   align-items: center;
   background-color: #4791db;
   padding: 100px 10px;
-  box-shadow: 0 0 5px rgba(0,0,0,.5);
 `;
 
 const FormWrapper = styled.div`

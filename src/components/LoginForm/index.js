@@ -28,11 +28,14 @@ const Row = styled.div`
   }
 
   input {
+    box-sizing: border-box;
     display: block;
     margin: 0.5em auto;
     width: 80%;
     height: 50px;
+    border: 1px solid #888;
     border-radius: 5px;
+    padding: 10px;
   }
 
   input:focus ~ label {
@@ -45,10 +48,12 @@ const Row = styled.div`
 
 const Button = styled.button`
   width: 90%;
-  padding: 10px 0;
+  padding: 5px 0;
   background-color: #4791db;
   border-radius: 20px;
   color: #fff;
+  text-transform: uppercase;
+  font-size: 18px;
 `;
 
 const LoginForm = ({ loading, currentUser, login }) => {

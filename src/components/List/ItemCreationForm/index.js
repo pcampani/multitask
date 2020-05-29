@@ -13,7 +13,7 @@ const Form = styled.div`
   padding: 1.5em;
   border: none;
   border-radius: 5px;
-  background-color: #F5F5F5;
+  
 `;
 
 const Button = styled.button`
