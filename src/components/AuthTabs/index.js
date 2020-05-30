@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const MenuContainer = styled.div`
-  margin-top: 80px;
+  margin-top: 20px;
   padding: 1em;
   /* border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.6); */

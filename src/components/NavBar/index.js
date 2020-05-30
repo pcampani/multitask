@@ -26,12 +26,16 @@ const Wrapper = styled.div`
   }
 `;
 
+const Logout = styled(LogoutButton)`
+  background: none;
+  border: none;
+`;
 
 const NavBar = () => (
   <Wrapper>
     <div><span>multi</span>task</div>
     <div>
-      <LogoutButton />
+      <Logout />
     </div>
   </Wrapper>
 );
