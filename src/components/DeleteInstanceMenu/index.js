@@ -15,10 +15,11 @@ const Button = styled.button`
 `;
 
 const Container = styled.div`
-  color: red;
+  color: #000;
   margin: 1em;
   padding: 1em;
-  border: 1px solid #eeeeee;
+  border: 2px solid #eee;
+  border-radius: 5px;
 `;
 
 function DeleteInstanceMenu({

@@ -16,6 +16,7 @@ const Wrapper = styled.div`
   width: 250px;
   padding: 1em 0;
   width: 100%;
+  box-shadow: 0 0 5px rgba(0,0,0,.4);
 `;
 
 const Row = styled.div`

@@ -20,6 +20,7 @@ const ItemsStyleWrapper = styled.div`
   justify-content: space-evenly;
 `;
 
+//background wrapper for the task lists
 const Wrapper = styled.div`
   margin: 100px 0 0 0;
   background-color: #64b5f633;
