@@ -16,6 +16,7 @@ const Wrapper = styled.div`
   margin: 60px auto 0 auto;
 `;
 
+//add form wrapper for styling
 const LoginWrapper = styled.div`
   display: flex;
   flex-direction: column;
