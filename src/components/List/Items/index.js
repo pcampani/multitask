@@ -21,7 +21,9 @@ const ItemsStyleWrapper = styled.div`
 `;
 
 const Wrapper = styled.div`
-  background-color: #efefef;
+  margin: 100px 0 0 0;
+  background-color: #64b5f633;
+  height: 100%;
 
 `;
 // np__added_end unit: list, comp: Items, loc: styling

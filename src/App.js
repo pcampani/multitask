@@ -13,7 +13,7 @@ import Items from './components/List/Items';
 
 const Wrapper = styled.div`
   width: 360px;
-  margin: 100px auto 0 auto;
+  margin: 60px auto 0 auto;
 `;
 
 const LoginWrapper = styled.div`
@@ -22,10 +22,10 @@ const LoginWrapper = styled.div`
   align-items: center;
   background-color: #4791db;
   padding: 100px 10px;
+  height: 100%;
 `;
 
 const FormWrapper = styled.div`
-  margin-top: 30px;
   background: #fff;
   width: 90%;
   border-radius: 5px;

@@ -33,6 +33,7 @@ const AuthTabs = ({ menuTitles, children }) => {
       <MenuContainer>
         {menuTitles.map((title, index) => (
           <Button 
+            key={index}
             selected={index === selectedTab}
             onClick={e => {
               e.preventDefault();

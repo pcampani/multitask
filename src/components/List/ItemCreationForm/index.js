@@ -3,9 +3,19 @@ import { graphql } from '@apollo/react-hoc';
 import styled from 'styled-components';
 import { withNoStack, EXECUTE } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
+import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 
 import { CREATE_ITEM_FOR_LIST_ACTION_ID
  } from '../../../config';
+
+ const useStyles = makeStyles((theme) => ({
+  input: {
+    marginBottom: theme.spacing(3),
+    backgroundColor: '#fff'
+  }
+}))
 
 // change styling here
 const Form = styled.div`
@@ -16,13 +26,10 @@ const Form = styled.div`
   
 `;
 
-const Button = styled.button`
-  margin-left: 1em;
-`;
-
 function ItemCreationForm({ userId, createItem, refetchQueries }) {
   const [ itemValue, updateItemValue ] = useState('');
   const [ loading, updateLoading ] = useState(false);
+  const style = useStyles();
 
   function handleChange(e) {
     updateItemValue(e.target.value);
@@ -73,9 +80,10 @@ function ItemCreationForm({ userId, createItem, refetchQueries }) {
 
   return (
     <Form>
-      <label htmlFor="item-value">
-        Item:
-        <input
+        <TextField
+          className={style.input}
+          variant="outlined"
+          label="Item"
           id="item-value"
           type="text"
           onChange={handleChange}
@@ -83,8 +91,7 @@ function ItemCreationForm({ userId, createItem, refetchQueries }) {
           value={ itemValue }
           disabled={loading}
         />
-      </label>
-      <Button type="submit"  disabled={loading}  onClick={handleSubmit}>
+      <Button variant="contained" color="primary" disabled={loading}  onClick={handleSubmit}>
         {
           loading
             ? 'Creating Item...'

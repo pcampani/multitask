@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-
+import TextField from '@material-ui/core/TextField';
 import { withNoStack } from '@nostack/no-stack';
-
+import { makeStyles } from '@material-ui/core/styles';
 import ForgotPasswordButton from '../ForgotPasswordButton';
 
+
+const useStyles = makeStyles((theme) => ({
+  input: {
+    marginBottom: theme.spacing(3)
+  }
+}))
 
 const Wrapper = styled.div`
   width: 250px;
@@ -38,12 +44,6 @@ const Row = styled.div`
     padding: 10px;
   }
 
-  input:focus ~ label {
-    top: -10px;
-    left: 35px;
-    color: #000;
-    font-size: .8rem;
-  }
 `;
 
 const Button = styled.button`
@@ -61,10 +61,7 @@ const LoginForm = ({ loading, currentUser, login }) => {
   const [password, setPassword] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
-
-  if (loading || currentUser) {
-    return null;
-  }
+  const classes = useStyles();
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -88,35 +85,37 @@ const LoginForm = ({ loading, currentUser, login }) => {
     }
   };
 
+  React.useEffect(() => {
+    if (loading || currentUser) {
+      return null;
+    }
+  },[])
+
   return (
     <Wrapper>
       <form onSubmit={handleSubmit}>
-        <Row>
-        <input
+        <TextField
+            className={classes.input}
             id="nostack-username"
-            type="text"
+            variant="outlined"
             name="username"
+            label="User Name"
             disabled={isSubmitting}
             value={username}
             onChange={e => setUsername(e.target.value)}
             />
-          <label htmlFor="nostack-username">
-            User Name
-          </label>
-        </Row>
-        <Row>
-        <input
-              id="nostack-password"
-              type="password"
-              name="password"
-              disabled={isSubmitting}
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-            />
-          <label htmlFor="nostack-password">
-            Password
-          </label>
-        </Row>
+
+        <TextField
+          className={classes.input}
+          id="nostack-password"
+          variant="outlined"
+          type="password"
+          name="password"
+          label="Password"
+          disabled={isSubmitting}
+          value={password}
+          onChange={e => setPassword(e.target.value)}
+        />
         <Row>
           <Button
             type="submit"

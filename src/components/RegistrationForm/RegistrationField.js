@@ -6,7 +6,9 @@ const RegistrationField = ({
   fieldLabel,
   type,
   name,
-}) => (
+}) => {
+
+  return (
   <Row>
     <label>
       {fieldLabel}
@@ -16,6 +18,6 @@ const RegistrationField = ({
       <ErrorMessage name={name} />
     </ErrorContainer>
   </Row>
-);
+  )};
 
 export default RegistrationField;

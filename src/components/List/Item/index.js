@@ -28,7 +28,7 @@ const ItemStyleWrapper = styled.div(({
   border: ${selected ? '1px solid aquamarine': '1px solid white'};
   border-radius: 10px;
   box-shadow: 5px 5px 10px #888888;
-  background-color: ${isDeleting ? 'tomato' : '#fff'};
+  background-color: ${isDeleting ? '#e33371' : '#fff'};
   cursor: ${selected ? 'auto' : 'pointer'};
 
   &:hover {
@@ -52,10 +52,10 @@ const Button = styled.button`
   cursor: pointer;
   font-size: 1.25rem;
   padding: 0;
-  color: #bbbbbb;
+  color: #2196f3;
   transition: color 0.5s ease;
   &:hover {
-    color: ${props => props.hoverColor || '#000000'};
+    color: ${props => props.hoverColor || '#1976d2'};
   }
 `;
 
