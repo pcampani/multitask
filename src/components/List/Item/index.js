@@ -26,7 +26,7 @@ const ItemStyleWrapper = styled.div(({
   font-size: 20px;
 
   &:hover {
-    background: rgba(0,0,0,.2);
+    background: #4AA5D433;
   }
 
   div.item {
