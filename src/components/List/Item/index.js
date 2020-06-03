@@ -19,7 +19,6 @@ const ItemStyleWrapper = styled.div(({
 }) => `
   display: flex;
   width: 100%;
-  border: ${selected ? '1px solid aquamarine': '1px solid white'};
   background-color: ${isDeleting ? '#e33371' : '#fff'};
   cursor: ${selected ? 'auto' : 'pointer'};
   padding: 15px 15px;
@@ -40,8 +39,8 @@ const ItemStyleWrapper = styled.div(({
 `);
 
 const Input = styled.input`
-  display: flex;
-  width: 20px;
+  display: inline-block;
+  width: 30px;
 `;
 
 const Button = styled.button`
@@ -163,7 +162,7 @@ function Item({
 
   return (
     <>
-      <Input type="checkbox" />
+      <Input type="checkbox" value={itemValue} />
       <ItemStyleWrapper selected={selected}>
       <div className="item">
         {  itemValue }
