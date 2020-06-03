@@ -22,10 +22,10 @@ const ItemsStyleWrapper = styled.div`
 
 //background wrapper for the task lists
 const Wrapper = styled.div`
-  margin: 100px 0 0 0;
-  background-color: #64b5f633;
-  height: 100%;
-
+  margin-top: 100px;
+  display: flex;
+  width: 100%;
+  background-color: #f3f8fb;
 `;
 // np__added_end unit: list, comp: Items, loc: styling
 
@@ -70,7 +70,7 @@ class Items extends Component {
 
     return (
      <Wrapper>
-        <Unit
+        <Unit 
         id={ SOURCE_LIST_ID }
         typeRelationships={ LIST_RELATIONSHIPS }
         query={ SOURCE_LIST_QUERY }
@@ -88,19 +88,22 @@ class Items extends Component {
 
           return (
             <>
-              <ItemCreationForm  userId={ userId } refetchQueries={refetchQueries}/>
+              
               <ItemsStyleWrapper ref={this.wrapperRef} onClick={this.handleClick}>
-                { items && items.map(item => (
-                  <Item
-                    key={v4()}
-                    parentId={ userId }
-                    item={ item }
-                    selected={ item.id === selectedItemId }
-                    refetchQueries={refetchQueries}
-                    onSelect={this.handleSelect}
-                  />
-                )) }
+                { !items.length ?  <Item item={{value:"No active tasks"}} /> :
+                  items.map(item => (
+                    <Item
+                      key={v4()}
+                      parentId={ userId }
+                      item={ item }
+                      selected={ item.id === selectedItemId }
+                      refetchQueries={refetchQueries}
+                      onSelect={this.handleSelect}
+                    />
+                    )) 
+                }
               </ItemsStyleWrapper>
+              <ItemCreationForm  userId={ userId } refetchQueries={refetchQueries}/>
                 {/* np__added_start unit: list, comp: Items, loc: renderEnding */}
                 {/* np__added_end unit: list, comp: Items, loc: renderEnding */}
             </>

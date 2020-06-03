@@ -62,9 +62,6 @@ function Order({
   const [isDeleteMode, updateIsDeleteMode] = useState(false);
   const [isDeleting, updateIsDeleting] = useState(false);
 
-  
-
-
   if (!selected) {
     return (
       <OrderStyleWrapper onClick={() => onSelect(order.id)}>

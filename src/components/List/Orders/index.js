@@ -7,7 +7,9 @@ import Order from '../Order';
 
 // np__added_start unit: list, comp: Orders, loc: styling
 
-const OrdersStyleWrapper = styled.div``;
+const OrdersStyleWrapper = styled.div`
+  width: 100%;
+`;
 
 const Button = styled.button`
   display: block;

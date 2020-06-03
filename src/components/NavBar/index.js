@@ -29,6 +29,7 @@ const Wrapper = styled.div`
 const Logout = styled(LogoutButton)`
   background: none;
   border: none;
+  font-size: 1.5rem;
 `;
 
 const NavBar = () => (

@@ -12,10 +12,6 @@ import {
 import EditInstanceForm from '../../EditInstanceForm';
 import DeleteInstanceMenu from '../../DeleteInstanceMenu';
 
-
-
-
-
 // add styling here
 const ItemStyleWrapper = styled.div(({
   selected,
@@ -41,7 +37,6 @@ const ItemStyleWrapper = styled.div(({
 
   div {
     display: flex;
-    flex: 1;
     justify-content: space-between;
   }
 `);
@@ -73,9 +68,6 @@ function Item({
   const [isSaving, updateIsSaving] = useState(false);
   const [isDeleteMode, updateIsDeleteMode] = useState(false);
   const [isDeleting, updateIsDeleting] = useState(false);
-
-  
-
 
   if (!selected) {
     return (
@@ -168,7 +160,10 @@ function Item({
 
   return (
     <ItemStyleWrapper selected={selected}>
-    <div className="item">{  itemValue }</div>
+    <div className="item">
+      <input type="checkbox" />
+      {  itemValue }
+    </div>
     <div>
       <Button
         type="button"
@@ -191,3 +186,5 @@ export default compose(
   graphql(EXECUTE, { name: 'updateInstance' }),
   graphql(EXECUTE, { name: 'deleteInstance' })
 )(Item);
+
+

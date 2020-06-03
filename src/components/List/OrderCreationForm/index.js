@@ -10,10 +10,6 @@ import { CREATE_ORDER_FOR_LIST_ACTION_ID
 // np__added_start unit: list, comp: Orders_Creation, loc: styling
 // change styling here
 const Form = styled.div`
-  margin: 2em;
-  padding: 1.5em;
-  border: none;
-  border-radius: 5px;
   background-color: #F5F5F5;
 `;
 // np__added_end unit: list, comp: Orders_Creation, loc: styling
