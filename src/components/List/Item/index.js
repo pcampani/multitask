@@ -22,11 +22,11 @@ const ItemStyleWrapper = styled.div(({
   border: ${selected ? '1px solid aquamarine': '1px solid white'};
   background-color: ${isDeleting ? '#e33371' : '#fff'};
   cursor: ${selected ? 'auto' : 'pointer'};
-  padding: 5px 0;
+  padding: 15px 15px;
   font-size: 20px;
 
   &:hover {
-    border: 1px solid aquamarine;
+    background: rgba(0,0,0,.2);
   }
 
   div.item {
@@ -39,12 +39,17 @@ const ItemStyleWrapper = styled.div(({
   }
 `);
 
+const Input = styled.input`
+  display: flex;
+  width: 20px;
+`;
+
 const Button = styled.button`
   background: none;
   border: none;
   cursor: pointer;
   font-size: 1.25rem;
-  padding: 0;
+  padding-right: 5px;
   color: #2196f3;
   transition: color 0.5s ease;
   &:hover {
@@ -157,26 +162,28 @@ function Item({
   }
 
   return (
-    <ItemStyleWrapper selected={selected}>
-    <div className="item">
-      <input type="checkbox" />
-      {  itemValue }
-    </div>
-    <div>
-      <Button
-        type="button"
-        onClick={() => updateIsEditMode(true)}
-      >
-        &#9998;
-      </Button>
-      <Button
-        type="button"
-        onClick={() => updateIsDeleteMode(true)}
-      >
-        &#128465;
-      </Button>
-    </div>
-  </ItemStyleWrapper>
+    <>
+      <Input type="checkbox" />
+      <ItemStyleWrapper selected={selected}>
+      <div className="item">
+        {  itemValue }
+      </div>
+      <div>
+        <Button
+          type="button"
+          onClick={() => updateIsEditMode(true)}
+        >
+          &#9998;
+        </Button>
+        <Button
+          type="button"
+          onClick={() => updateIsDeleteMode(true)}
+        >
+          &#128465;
+        </Button>
+      </div>
+    </ItemStyleWrapper>
+    </>
   );
 }
 

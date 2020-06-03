@@ -34,7 +34,6 @@ const Wrapper = styled.div`
 const TaskWrapper = styled.div`
   margin: 40px auto 40px auto;
   width: 320px;
-  padding: 1rem;
   background: #fff;
   border-radius: 5px;
   box-shadow: 2px 2px 5px rgba(0,0,0,.5);
@@ -43,6 +42,7 @@ const TaskWrapper = styled.div`
     text-align: left;
     color: #6aa5fe;
     font-weight: lighter;
+    padding: 10px 0 0 15px;
   }
 
 `;

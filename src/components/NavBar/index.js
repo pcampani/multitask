@@ -23,23 +23,25 @@ const Wrapper = styled.div`
   z-index: 1000;
 
   span {
-    font-weight: bolder;
+    position: absolute;
+    width: 100%;
+    height: .1px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.5);
+    top: 98px;
+    left: 0;
   }
 `;
 
-const Logout = styled(LogoutButton)`
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-`;
-
 const NavBar = () => (
-  <Wrapper>
-    <img src={logo} alt="multitask logo"/>
-    <div>
-      <Logout />
-    </div>
-  </Wrapper>
+    <Wrapper>
+      <img src={logo} alt="multitask logo"/>
+      <div>
+      <LogoutButton className='logout' />
+      </div>
+      <span>&nbsp;</span>
+    </Wrapper>
+   
+  
 );
 
 export default NavBar;

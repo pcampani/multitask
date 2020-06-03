@@ -42,3 +42,8 @@
   box-sizing: border-box;
   background: none;
 }
+
+
+button.sc-Axmtr {
+  text-transform: uppercase;
+}
