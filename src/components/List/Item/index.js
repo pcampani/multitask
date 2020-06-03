@@ -19,13 +19,11 @@ const ItemStyleWrapper = styled.div(({
 }) => `
   display: flex;
   width: 100%;
-  margin: 1em 1em;
-  padding: 1.5em;
   border: ${selected ? '1px solid aquamarine': '1px solid white'};
-  border-radius: 10px;
-  box-shadow: 5px 5px 10px #888888;
   background-color: ${isDeleting ? '#e33371' : '#fff'};
   cursor: ${selected ? 'auto' : 'pointer'};
+  padding: 5px 0;
+  font-size: 20px;
 
   &:hover {
     border: 1px solid aquamarine;

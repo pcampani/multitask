@@ -24,8 +24,27 @@ const ItemsStyleWrapper = styled.div`
 const Wrapper = styled.div`
   margin-top: 100px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  height: 100%;
   background-color: #f3f8fb;
+`;
+
+const TaskWrapper = styled.div`
+  margin: 40px auto 40px auto;
+  width: 320px;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,.5);
+
+  h3 {
+    text-align: left;
+    color: #6aa5fe;
+    font-weight: lighter;
+  }
+
 `;
 // np__added_end unit: list, comp: Items, loc: styling
 
@@ -88,21 +107,23 @@ class Items extends Component {
 
           return (
             <>
-              
+              <TaskWrapper>
+                {items.length !== 0 ? <h3>Active tasks</h3> : null}
               <ItemsStyleWrapper ref={this.wrapperRef} onClick={this.handleClick}>
                 { !items.length ?  <Item item={{value:"No active tasks"}} /> :
-                  items.map(item => (
-                    <Item
-                      key={v4()}
-                      parentId={ userId }
-                      item={ item }
-                      selected={ item.id === selectedItemId }
-                      refetchQueries={refetchQueries}
-                      onSelect={this.handleSelect}
-                    />
+                    items.map(item => (
+                        <Item
+                          key={v4()}
+                          parentId={ userId }
+                          item={ item }
+                          selected={ item.id === selectedItemId }
+                          refetchQueries={refetchQueries}
+                          onSelect={this.handleSelect}
+                        />
                     )) 
                 }
               </ItemsStyleWrapper>
+              </TaskWrapper>
               <ItemCreationForm  userId={ userId } refetchQueries={refetchQueries}/>
                 {/* np__added_start unit: list, comp: Items, loc: renderEnding */}
                 {/* np__added_end unit: list, comp: Items, loc: renderEnding */}

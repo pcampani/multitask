@@ -113,6 +113,7 @@ function ItemCreationForm({ userId, createItem, refetchQueries }) {
           onKeyPress={handleKeyPress}
           value={ itemValue }
           disabled={loading}
+          placeholder="Add a task"
         />
       <Button variant="contained" color="primary" disabled={loading}  onClick={handleSubmit}>
         {/* {loading ? 'Creating Item...': 'Add a task +'}*/}

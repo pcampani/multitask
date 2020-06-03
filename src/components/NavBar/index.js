@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { LogoutButton } from '@nostack/no-stack';
+import logo from '../../assets/img/logo.png';
 
 // change styling here
 const Wrapper = styled.div`
@@ -34,7 +35,7 @@ const Logout = styled(LogoutButton)`
 
 const NavBar = () => (
   <Wrapper>
-    <div><span>multi</span>task</div>
+    <img src={logo} alt="multitask logo"/>
     <div>
       <Logout />
     </div>
