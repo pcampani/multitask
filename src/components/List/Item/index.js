@@ -24,10 +24,6 @@ const ItemStyleWrapper = styled.div(({
   padding: 15px 15px;
   font-size: 20px;
 
-  &:hover {
-    background: #4AA5D433;
-  }
-
   div.item {
     flex: 4;
   }
@@ -41,6 +37,22 @@ const ItemStyleWrapper = styled.div(({
 const Input = styled.input`
   display: inline-block;
   width: 30px;
+`;
+
+const TaskWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+
+  input[type='checkbox'] {
+    height: 50px;
+    border: 1px solid #cdcdcd;
+    margin: 5px 0 0 40px;
+  }
+
+  
 `;
 
 const Button = styled.button`
@@ -73,9 +85,12 @@ function Item({
 
   if (!selected) {
     return (
-      <ItemStyleWrapper onClick={() => onSelect(item.id)}>
-        { itemValue }
-      </ItemStyleWrapper>
+      <TaskWrapper>
+        <Input type="checkbox" value={itemValue} />
+        <ItemStyleWrapper onClick={() => onSelect(item.id)}>
+          { itemValue }
+        </ItemStyleWrapper>
+      </TaskWrapper>
     );
   }
 
@@ -161,28 +176,28 @@ function Item({
   }
 
   return (
-    <>
-      <Input type="checkbox" value={itemValue} />
-      <ItemStyleWrapper selected={selected}>
-      <div className="item">
-        {  itemValue }
-      </div>
-      <div>
-        <Button
-          type="button"
-          onClick={() => updateIsEditMode(true)}
-        >
-          &#9998;
-        </Button>
-        <Button
-          type="button"
-          onClick={() => updateIsDeleteMode(true)}
-        >
-          &#128465;
-        </Button>
-      </div>
-    </ItemStyleWrapper>
-    </>
+      <TaskWrapper>
+         <Input type="checkbox" value={itemValue} />
+        <ItemStyleWrapper selected={selected}>
+        <div className="item">
+          {  itemValue }
+        </div>
+        <div>
+          <Button
+            type="button"
+            onClick={() => updateIsEditMode(true)}
+          >
+            &#9998;
+          </Button>
+          <Button
+            type="button"
+            onClick={() => updateIsDeleteMode(true)}
+          >
+            &#128465;
+          </Button>
+        </div>
+      </ItemStyleWrapper>
+      </TaskWrapper>
   );
 }
 
@@ -190,5 +205,3 @@ export default compose(
   graphql(EXECUTE, { name: 'updateInstance' }),
   graphql(EXECUTE, { name: 'deleteInstance' })
 )(Item);
-
-

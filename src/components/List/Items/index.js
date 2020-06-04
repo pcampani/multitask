@@ -29,6 +29,8 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   background-color: #f3f8fb;
+
+  
 `;
 
 const TaskWrapper = styled.div`
@@ -44,6 +46,7 @@ const TaskWrapper = styled.div`
     font-weight: lighter;
     padding: 10px 0 0 15px;
   }
+  
 
 `;
 // np__added_end unit: list, comp: Items, loc: styling
