@@ -66,6 +66,11 @@ const Button = styled.button`
   &:hover {
     color: ${props => props.hoverColor || '#1976d2'};
   }
+
+  &:disabled {
+    color: #b0babf;
+    text-decoration: none !important;
+  }
 `;
 
 function Item({
@@ -83,10 +88,11 @@ function Item({
   const [isDeleteMode, updateIsDeleteMode] = useState(false);
   const [isDeleting, updateIsDeleting] = useState(false);
   let [completed, setCompleted] = useState(false);
-  let toggle = React.useRef(null)
+  let toggle = React.useRef(null);
+  let menu = React.useRef(null);
 
   const handleChange = (event) => {
-    const task = toggle.current.nextElementSibling;
+    const task = toggle.current;
     setCompleted(completed = !completed)
     if(completed === true) {
       task.style.textDecoration = "line-through";
@@ -102,8 +108,8 @@ function Item({
   if (!selected) {
     return (
       <TaskWrapper>
-        <Input type="checkbox" ref={toggle} value={itemValue} onChange={handleChange}/>
-        <ItemStyleWrapper onClick={() => onSelect(item.id)}>
+        <Input type="checkbox"  value={itemValue} onChange={handleChange}/>
+        <ItemStyleWrapper ref={toggle} onClick={() => onSelect(item.id)}>
           { itemValue }
         </ItemStyleWrapper>
       </TaskWrapper>
@@ -193,21 +199,23 @@ function Item({
 
   return (
       <TaskWrapper>
-        <Input type="checkbox" ref={toggle} value={itemValue} onChange={handleChange}/>
-        <ItemStyleWrapper selected={selected}>
+        <Input type="checkbox"  value={itemValue} onChange={handleChange}/>
+        <ItemStyleWrapper ref={toggle} selected={selected} disabled={completed}>
         <div className="item">
           {  itemValue }
         </div>
-        <div>
+        <div ref={menu}>
           <Button
             type="button"
             onClick={() => updateIsEditMode(true)}
+            disabled={completed}
           >
             &#9998;
           </Button>
           <Button
             type="button"
             onClick={() => updateIsDeleteMode(true)}
+            disabled={completed}
           >
             &#128465;
           </Button>
