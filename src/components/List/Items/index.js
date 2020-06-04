@@ -113,7 +113,16 @@ class Items extends Component {
               <TaskWrapper>
                 {items.length !== 0 ? <h3>Active tasks</h3> : null}
               <ItemsStyleWrapper ref={this.wrapperRef} onClick={this.handleClick}>
-                { !items.length ?  <Item item={{value:"No active tasks"}} /> :
+                { !items.length ?  <div style={{
+                    width: "100%",
+                    display: "flex", 
+                    justifyContent: "flex-start", 
+                    alignItems:"flex-start", 
+                    height:"100px",
+                    padding: "1rem",
+                    color: "#434343"
+                  }}>
+                    No active tasks</div> :
                     items.map(item => (
                         <Item
                           key={v4()}
