@@ -9,7 +9,7 @@ const Form = styled.div`
   input {
     font-size: 20px;
     padding-left: 50px;
-    width: 200px;
+    width: 180px;
   }
   
 `;

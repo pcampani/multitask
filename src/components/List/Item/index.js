@@ -19,12 +19,13 @@ const ItemStyleWrapper = styled.div(({
 }) => `
   display: flex;
   width: 100%;
+  align-items: center;
   background-color: ${isDeleting ? '#e33371' : '#fff'};
   cursor: ${selected ? 'auto' : 'pointer'};
-  padding: 15px 15px;
   font-size: 20px;
 
   div.item {
+    
     flex: 4;
   }
 
@@ -33,11 +34,17 @@ const ItemStyleWrapper = styled.div(({
     justify-content: space-between;
   }
 
+
 `);
 
 const Input = styled.input`
   display: inline-block;
-  width: 30px;
+  height: 50px;
+  width: 20px;
+  border: 1px solid #cdcdcd;
+  margin: 5px 0 0 40px;
+  padding: 10px;
+  z-index: 10;
 `;
 
 const TaskWrapper = styled.div`
@@ -45,15 +52,22 @@ const TaskWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 10px;
 
-  input[type='checkbox'] {
-    height: 50px;
-    border: 1px solid #cdcdcd;
-    margin: 5px 0 0 40px;
+    div.item {
+      padding: 10px;
+    }
+  
+    &:hover {
+    background: #c8d3d9;
   }
 
-  
+  &:hover div.item {
+    background: #c8d3d9;
+  }
+
+  &:hover div {
+    background: #c8d3d9;
+  }
 `;
 
 const Button = styled.button`
@@ -108,8 +122,8 @@ function Item({
   if (!selected) {
     return (
       <TaskWrapper>
-        <Input type="checkbox"  value={itemValue} onChange={handleChange}/>
-        <ItemStyleWrapper ref={toggle} onClick={() => onSelect(item.id)}>
+         <Input type="checkbox"  value={itemValue} onChange={handleChange}/>
+        <ItemStyleWrapper className="item" ref={toggle} onClick={() => onSelect(item.id)}>
           { itemValue }
         </ItemStyleWrapper>
       </TaskWrapper>
