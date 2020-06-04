@@ -32,6 +32,7 @@ const ItemStyleWrapper = styled.div(({
     display: flex;
     justify-content: space-between;
   }
+
 `);
 
 const Input = styled.input`
@@ -89,7 +90,6 @@ function Item({
   const [isDeleting, updateIsDeleting] = useState(false);
   let [completed, setCompleted] = useState(false);
   let toggle = React.useRef(null);
-  let menu = React.useRef(null);
 
   const handleChange = (event) => {
     const task = toggle.current;
@@ -147,7 +147,6 @@ function Item({
       <ItemStyleWrapper>
         <EditInstanceForm
           id={ item.id }
-          label="Item Value:"
           value={ itemValue }
           onChange={handleItemValueChange}
           onSave={handleItemValueSave}
@@ -200,11 +199,11 @@ function Item({
   return (
       <TaskWrapper>
         <Input type="checkbox"  value={itemValue} onChange={handleChange}/>
-        <ItemStyleWrapper ref={toggle} selected={selected} disabled={completed}>
+        <ItemStyleWrapper ref={toggle} selected={selected}>
         <div className="item">
           {  itemValue }
         </div>
-        <div ref={menu}>
+        <div>
           <Button
             type="button"
             onClick={() => updateIsEditMode(true)}

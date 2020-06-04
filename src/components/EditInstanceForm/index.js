@@ -1,12 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const Form = styled.div`
+ 
+  display: flex;
+  padding: 12px 15px;
+
+  input {
+    font-size: 20px;
+    padding-left: 50px;
+    width: 200px;
+  }
+  
+`;
+
 const Button = styled.button`
   background: none;
   border: none;
   cursor: pointer;
   font-size: 1.25rem;
-  padding: 0;
+  padding-right: 10px;
   color: #bbbbbb;
   transition: color 0.5s ease;
   &:hover {
@@ -24,7 +37,7 @@ function EditInstanceForm({
   disabled,
 }) {
   return (
-    <>
+    <Form>
       <label htmlFor={id}>
         {label}
         <input
@@ -51,7 +64,7 @@ function EditInstanceForm({
       >
         &#10005;
       </Button>
-    </>
+    </Form>
   );
 }
 
