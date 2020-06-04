@@ -82,11 +82,27 @@ function Item({
   const [isSaving, updateIsSaving] = useState(false);
   const [isDeleteMode, updateIsDeleteMode] = useState(false);
   const [isDeleting, updateIsDeleting] = useState(false);
+  let [completed, setCompleted] = useState(false);
+  let toggle = React.useRef(null)
+
+  const handleChange = (event) => {
+    const task = toggle.current.nextElementSibling;
+    setCompleted(completed = !completed)
+    if(completed === true) {
+      task.style.textDecoration = "line-through";
+      task.style.color = "#b0babf";
+    }
+    else {
+      task.style.textDecoration = "none";
+      task.style.color = "#000";
+    }
+    
+  }
 
   if (!selected) {
     return (
       <TaskWrapper>
-        <Input type="checkbox" value={itemValue} />
+        <Input type="checkbox" ref={toggle} value={itemValue} onChange={handleChange}/>
         <ItemStyleWrapper onClick={() => onSelect(item.id)}>
           { itemValue }
         </ItemStyleWrapper>
@@ -177,7 +193,7 @@ function Item({
 
   return (
       <TaskWrapper>
-         <Input type="checkbox" value={itemValue} />
+        <Input type="checkbox" ref={toggle} value={itemValue} onChange={handleChange}/>
         <ItemStyleWrapper selected={selected}>
         <div className="item">
           {  itemValue }
