@@ -29,7 +29,7 @@ const FormWrapper = styled.div`
   text-align: center;
 
   h2 {
-    font-weight: 300;
+    font-weight: 400;
   }
 `;
 

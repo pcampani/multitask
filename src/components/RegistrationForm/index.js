@@ -23,6 +23,14 @@ const Button = styled.button`
   background-color: #4791db;
   border-radius: 20px;
   color: #fff;
+  transition: background .2s ease-in;
+  letter-spacing: 2px;
+  font-weight: lighter;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #366FA8;
+  }
 `;
 
 const validationSchema = Yup.object().shape({
@@ -142,7 +150,7 @@ const RegistrationForm = ({
                 type="submit"
                 disabled={isSubmitting || !isValid || isValidating || !dirty}
               >
-                Sign Up!
+                SIGN UP
               </Button>
               {formError && <ErrorContainer>{formError}</ErrorContainer>}
             </Row>

@@ -43,8 +43,15 @@ const Wrapper = styled.div`
       border-radius: 50px;
       text-transform: uppercase;
       font-size: 18px;
-      font-weight: lighter;
+      font-weight: 400;
       text-decoration: none;
+      transition: background .2s ease-in;
+      letter-spacing: 2px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #366FA8;
+      }
     }
 
     h4 {

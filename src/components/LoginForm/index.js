@@ -113,6 +113,14 @@ const Button = styled.button`
   color: #fff;
   text-transform: uppercase;
   font-size: 18px;
+  cursor: pointer;
+  transition: background .2s ease-in;
+  letter-spacing: 2px;
+  font-weight: lighter;
+
+  &:hover {
+    background-color: #366FA8;
+  }
 `;
 
 const LoginForm = ({ loading, currentUser, login }) => {
@@ -186,7 +194,7 @@ const LoginForm = ({ loading, currentUser, login }) => {
             type="submit"
             disabled={isSubmitting || !username || !password}
           >
-            Log In
+            LOG IN
           </Button>
         </Row>
         {error && <Row>{error}</Row>}
