@@ -123,25 +123,25 @@ const RegistrationForm = ({
       >
         {({isSubmitting, isValid, dirty, isValidating}) => (
           <Form>
-            <RegistrationField fieldLabel="Username:" type="text" name="name" />
+            <RegistrationField fieldLabel="User Name" type="text" name="name" bg="user"/>
             <RegistrationField
-              fieldLabel="First Name:"
+              fieldLabel="First Name"
               type="text"
               name="firstName"
             />
             <RegistrationField
-              fieldLabel="Last Name:"
+              fieldLabel="Last Name"
               type="text"
               name="lastName"
             />
-            <RegistrationField fieldLabel="Email:" type="email" name="email" />
+            <RegistrationField fieldLabel="Email" type="email" name="email" />
             <RegistrationField
-              fieldLabel="Password:"
+              fieldLabel="Password"
               type="password"
               name="password"
             />
             <RegistrationField
-              fieldLabel="Confirm Password:"
+              fieldLabel="Confirm Password"
               type="password"
               name="passwordConfirmation"
             />

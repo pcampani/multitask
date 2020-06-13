@@ -6,6 +6,8 @@ export const Wrapper = styled.div`
 `;
 
 export const ErrorContainer = styled.div`
+  font-family: "Open Sans";
+  letter-spacing: 1px;
   font-size: 0.75rem;
   color: tomato;
 `;

@@ -2,13 +2,18 @@ import React from 'react';
 import { Field, ErrorMessage } from 'formik';
 import { Row, ErrorContainer } from './RegistrationForm.style';
 import styled from 'styled-components';
+import { TextField } from 'formik-material-ui';
+import user from '../../assets/img/user.png';
 
 //style formik input field with styled components
 const Input = styled(Field)`
-  border: 1px solid #444;
   border-radius: 5px;
   padding: 20px;
+  width: 100%;
+  background: url(${props => props.bg ? user : null});
+
 `;
+
 
 const RegistrationField = ({
   fieldLabel,
@@ -18,10 +23,7 @@ const RegistrationField = ({
 
   return (
   <Row>
-    <Input type={type} name={name} placeholder={fieldLabel} />
-    <ErrorContainer>
-      <ErrorMessage name={name} />
-    </ErrorContainer>
+    <Input type={type} name={name} label={fieldLabel} component={TextField} variant='outlined'/>
   </Row>
   )};
 
