@@ -7,7 +7,7 @@ import logo from '../../assets/img/logo.png';
 // change styling here
 const Wrapper = styled.div`
   box-sizing: border-box;
-  width: 360px;
+  width: 415px;
   height: 100px;
   position: fixed;
   background-color: #fff;

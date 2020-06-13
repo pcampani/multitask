@@ -3,17 +3,9 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Header from '../Header';
 
-import logo from '../../assets/img/logo-big.png';
 import frame from '../../assets/img/frame.png';
 import Footer from './Footer';
 
-const Container = styled.div`
-  display: grid;
-  justify-content: center;
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-`;
 
 const Wrapper = styled.div`
   

@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { NoStackConsumer } from '@nostack/no-stack';
 
-import { PLATFORM_ID, TYPE_USER_ID } from '../../config';
-
 import RegistrationForm from '../RegistrationForm';
 import Items from '../List/Items';
 import Header from '../Header';

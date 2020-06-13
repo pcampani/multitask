@@ -2,7 +2,7 @@ import React, { Component, createRef } from 'react';
 import { Unit } from '@nostack/no-stack';
 import styled from 'styled-components';
 import { v4 } from 'uuid';
-
+import NavBar from '../../NavBar'
 import { flattenData } from '../../../flattenData';
 
 import ItemCreationForm from '../ItemCreationForm';
@@ -22,7 +22,7 @@ const ItemsStyleWrapper = styled.div`
 
 //background wrapper for the task lists
 const Wrapper = styled.div`
-  margin-top: 100px;
+  margin-top: -24px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,7 +93,9 @@ class Items extends Component {
     };
 
     return (
-     <Wrapper>
+      <>
+        <NavBar />
+        <Wrapper>
         <Unit 
         id={ SOURCE_LIST_ID }
         typeRelationships={ LIST_RELATIONSHIPS }
@@ -146,6 +148,7 @@ class Items extends Component {
         }}
       </Unit>
      </Wrapper>
+      </>
     );
   }
 }

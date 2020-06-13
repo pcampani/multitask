@@ -99,6 +99,7 @@ const Row = styled.div`
     border: 1px solid #888;
     border-radius: 5px;
     padding: 10px;
+    text-align: center;
   }
 
 `;

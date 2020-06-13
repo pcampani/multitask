@@ -1,10 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { NoStackConsumer } from '@nostack/no-stack';
-import { PLATFORM_ID, TYPE_USER_ID } from '../config';
 
 import logo from '../assets/img/logo-big.png';
-import NavBar from './NavBar';
+
 
 const Container = styled.div`
   display: grid;
@@ -24,9 +22,6 @@ const Wrapper = styled.div`
 `;
 
 export default function Header(props) {
-  let [user, setUser] = React.useState({});
-
-  
   
   return (
     <Container>
