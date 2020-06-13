@@ -26,22 +26,20 @@ const Wrapper = styled.div`
     position: absolute;
     width: 100%;
     height: .1px;
-    box-shadow: 0 2px 10px rgba(0,0,0,.5);
-    top: 98px;
+    border-bottom: 5px solid rgba(0,0,0,.05);
+    top: 96px;
     left: 0;
   }
 `;
 
 const NavBar = () => (
-    <Wrapper>
-      <img src={logo} alt="multitask logo"/>
-      <div>
-      <LogoutButton className='logout' />
-      </div>
-      <span>&nbsp;</span>
-    </Wrapper>
-   
-  
+  <Wrapper>
+    <img src={logo} alt="multitask logo"/>
+    <div>
+    <LogoutButton className='logout' />
+    </div>
+    <span>&nbsp;</span>
+  </Wrapper>
 );
 
 export default NavBar;

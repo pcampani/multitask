@@ -18,7 +18,6 @@ const RegistrationField = ({
 
   return (
   <Row>
-    
     <Input type={type} name={name} placeholder={fieldLabel} />
     <ErrorContainer>
       <ErrorMessage name={name} />

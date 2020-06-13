@@ -82,6 +82,7 @@ class Items extends Component {
   }
 
   handleSelect = id => this.setState({ selectedItemId: id });
+  
 
   render() {
     const { userId } = this.props;
