@@ -10,7 +10,8 @@ import lock from '../../assets/img/lock.png';
 //material ui classes
 const useStyles = makeStyles((theme) => ({
   input: {
-    marginBottom: theme.spacing(3),
+    marginBottom: theme.spacing(3)
+    
   }
 }))
 
@@ -30,10 +31,14 @@ const Wrapper = styled.div`
     }
 
     input#nostack-username {
-      width: 100%;
+      text-indent: 30px;
     }
 
-    .user-input {
+    input#nostack-password {
+      text-indent: 30px;
+    }
+
+  .user-input {
     position: relative;
 
     img {
