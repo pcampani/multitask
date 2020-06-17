@@ -22,6 +22,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 100%;
 
   form {
     width: 100%;
@@ -75,10 +76,12 @@ const Wrapper = styled.div`
     }
   }
 
-  
+  @media screen and (max-width:360px) {
+    form {
+      width: 320px;
+    }
   }
-  
-`;
+  }`;
 
 const Row = styled.div`
   margin: 0.5em;

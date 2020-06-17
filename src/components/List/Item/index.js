@@ -11,8 +11,8 @@ import {
 
 import EditInstanceForm from '../../EditInstanceForm';
 import DeleteInstanceMenu from '../../DeleteInstanceMenu';
+import ItemCreationForm from '../ItemCreationForm';
 
-// add styling here
 const ItemStyleWrapper = styled.div(({
   selected,
   isDeleting,
@@ -28,13 +28,10 @@ const ItemStyleWrapper = styled.div(({
     
     flex: 4;
   }
-
   div {
     display: flex;
     justify-content: space-between;
   }
-
-
 `);
 
 const Input = styled.input`
@@ -213,26 +210,26 @@ function Item({
       <TaskWrapper>
         <Input type="checkbox"  value={itemValue} onChange={handleChange}/>
         <ItemStyleWrapper ref={toggle} selected={selected}>
-        <div className="item">
-          {  itemValue }
-        </div>
-        <div>
-          <Button
-            type="button"
-            onClick={() => updateIsEditMode(true)}
-            disabled={completed}
-          >
-            &#9998;
-          </Button>
-          <Button
-            type="button"
-            onClick={() => updateIsDeleteMode(true)}
-            disabled={completed}
-          >
-            &#128465;
-          </Button>
-        </div>
-      </ItemStyleWrapper>
+          <div className="item">
+            {  itemValue }
+          </div>
+          <div>
+            <Button
+              type="button"
+              onClick={() => updateIsEditMode(true)}
+              disabled={completed}
+            >
+              &#9998;
+            </Button>
+            <Button
+              type="button"
+              onClick={() => updateIsDeleteMode(true)}
+              disabled={completed}
+            >
+              &#128465;
+            </Button>
+          </div>
+        </ItemStyleWrapper>
       </TaskWrapper>
   );
 }

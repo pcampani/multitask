@@ -23,12 +23,13 @@ const ItemsStyleWrapper = styled.div`
 const Wrapper = styled.div`
   position: absolute;
   top: 0;
-  left: 8vw;
+  left: 50%;
   width: 80vw;
   height: 100vh;
   z-index: -1;
   background-color: #f3f8fb;
   padding: 120px 2rem 2rem 2rem;
+  transform: translateX(-50%);
   
 `;
 

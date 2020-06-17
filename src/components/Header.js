@@ -5,17 +5,11 @@ import logo from '../assets/img/logo-big.png';
 
 
 const Container = styled.div`
-  display: grid;
-  justify-content: center;
-  align-items: center;
   width: 100%;
-  height: 100%;
   
 `;
 
 const Wrapper = styled.div`
-  position: absolute;
-
   
   div.header {
     top: 0;
@@ -25,11 +19,18 @@ const Wrapper = styled.div`
     align-items: center;
     width: 100vw;
     height: 100px;
-    box-shadow: 0 2px 5px rgba(0,0,0,.3);
+    box-shadow: 0 1px 2px 2px rgba(0,0,0,.1);
   }
 
   div.children {
-    margin-top: 2rem;
+    margin-top: .2rem;
+  }
+
+  @media screen and (max-width: 380px) {
+
+    div.children {
+      width: 360px;
+    }
   }
 `;
 

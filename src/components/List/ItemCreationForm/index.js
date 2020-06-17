@@ -17,6 +17,10 @@ const Wrapper = styled.div`
   justify-content: center;
   position: relative;
   margin: 1rem 0;
+  position: fixed;
+  top: calc(100vh - 110px);
+  left: 50%;
+  transform: translateX(-50%);
 `;
 
 const InputWrapper = styled.div`
@@ -36,6 +40,7 @@ const Form = styled.div`
    border-radius: 10px;
    box-shadow: 5px 5px 10px #888888;
    border: none;
+   font-size: 1rem;
   }
 
   button {
@@ -60,6 +65,7 @@ const Button = styled.button`
 const TaskButton = styled(Button)`
   width: 320px;
   font-size: 20px;
+  
 `;
 
 
@@ -113,23 +119,20 @@ function ItemCreationForm({ userId, createItem, refetchQueries }) {
   return (
     <Wrapper>
       <InputWrapper>
-      {isVisible ? <Form>
-        <input
-          id="item-value"
-          type="text"
-          onChange={handleChange}
-          onKeyPress={handleKeyPress}
-          value={ itemValue }
-          disabled={loading}
-          placeholder="Add a task"
-        />
-      <Button variant="contained" color="primary" disabled={loading}  onClick={handleSubmit}>
-        {/* {loading ? 'Creating Item...': 'Add a task +'}*/}
-        +
-      </Button>
-    </Form> :
-    <TaskButton onClick={toggleForm}>Add a task +</TaskButton>}
-      </InputWrapper>
+        {isVisible ? <Form>
+          <input
+            id="item-value"
+            type="text"
+            onChange={handleChange}
+            onKeyPress={handleKeyPress}
+            value={ itemValue }
+            disabled={loading}
+            placeholder="Add a task"
+          />
+          <Button variant="contained" color="primary" disabled={loading}  onClick={handleSubmit}>+</Button>
+        </Form> :
+      <TaskButton onClick={toggleForm}>Add a task +</TaskButton>}
+    </InputWrapper>
   </Wrapper>
   );
 }

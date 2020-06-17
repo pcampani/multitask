@@ -10,7 +10,7 @@ const Container = styled.div`
   color: #fff;
   width: 100vw;
   position: absolute;
-  top: calc(100vh - 50px);
+  top: calc(100vh - 60px);
 `;
 
 export default function Footer() {
