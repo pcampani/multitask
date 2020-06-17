@@ -52,7 +52,6 @@ const Wrapper = styled.div`
       padding-left: 2rem;
     }
 
-
     label.MuiInputLabel-outlined.MuiInputLabel-shrink {
     transform: translate(-7px, -6px) scale(0.75);
     }
@@ -76,11 +75,12 @@ const Wrapper = styled.div`
     }
   }
 
-  @media screen and (max-width:360px) {
-    form {
+  @media screen and (max-width) {
+    form input {
       width: 320px;
     }
   }
+
   }`;
 
 const Row = styled.div`

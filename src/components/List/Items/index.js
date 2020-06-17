@@ -16,7 +16,7 @@ import { LIST_RELATIONSHIPS, SOURCE_LIST_QUERY } from '../../source-props/list';
 // add styling here
 const ItemsStyleWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 `;
 
 //background wrapper for the task lists
@@ -50,7 +50,6 @@ const TaskWrapper = styled.div`
 
 const ItemWrapper = styled.div`
   display: grid;
-  
 `;
 
 // np__added_end unit: list, comp: Items, loc: styling

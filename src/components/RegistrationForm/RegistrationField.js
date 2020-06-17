@@ -1,6 +1,6 @@
 import React from 'react';
-import { Field, ErrorMessage } from 'formik';
-import { Row, ErrorContainer } from './RegistrationForm.style';
+import { Field } from 'formik';
+import { Row } from './RegistrationForm.style';
 import styled from 'styled-components';
 import { TextField } from 'formik-material-ui';
 import user from '../../assets/img/user.png';

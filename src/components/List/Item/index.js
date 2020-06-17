@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { EXECUTE } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 import { graphql } from '@apollo/react-hoc';
+import { Link } from 'react-router-dom';
 
 import {
   UPDATE_ITEM_FOR_LIST_ACTION_ID,
@@ -11,7 +12,6 @@ import {
 
 import EditInstanceForm from '../../EditInstanceForm';
 import DeleteInstanceMenu from '../../DeleteInstanceMenu';
-import ItemCreationForm from '../ItemCreationForm';
 
 const ItemStyleWrapper = styled.div(({
   selected,
@@ -25,13 +25,14 @@ const ItemStyleWrapper = styled.div(({
   font-size: 20px;
 
   div.item {
-    
     flex: 4;
   }
   div {
     display: flex;
     justify-content: space-between;
   }
+
+  
 `);
 
 const Input = styled.input`
@@ -48,6 +49,7 @@ const TaskWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  padding: 0 1rem;
 
     div.item {
       padding: 10px;
@@ -112,7 +114,6 @@ function Item({
       task.style.textDecoration = "none";
       task.style.color = "#000";
     }
-    
   }
 
   if (!selected) {

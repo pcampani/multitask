@@ -6,7 +6,6 @@ import logo from '../assets/img/logo-big.png';
 
 const Container = styled.div`
   width: 100%;
-  
 `;
 
 const Wrapper = styled.div`

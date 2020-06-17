@@ -31,6 +31,7 @@ const FormWrapper = styled.div`
   h2 {
     font-weight: 400;
   }
+
 `;
 
 const Login = () => (

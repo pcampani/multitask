@@ -6,7 +6,7 @@ const Button = styled.button`
   border: none;
   cursor: pointer;
   font-size: 1.25rem;
-  padding: 0;
+  padding-left: 1rem;
   color: #bbbbbb;
   transition: color 0.5s ease;
   &:hover {
@@ -15,11 +15,8 @@ const Button = styled.button`
 `;
 
 const Container = styled.div`
-  color: #000;
-  margin: 1em;
-  padding: 1em;
-  border: 2px solid #eee;
-  border-radius: 5px;
+  color: tomato;
+  margin-left: 1em;
 `;
 
 function DeleteInstanceMenu({
