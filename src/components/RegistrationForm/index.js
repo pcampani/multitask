@@ -64,10 +64,12 @@ const validationSchema = Yup.object().shape({
 const RegistrationForm = ({
   userClassId,
   onSuccess,
+  props
 }) => {
   const [register] = useMutation(REGISTER_USER)
   const [registrationCompleted, setRegistrationCompleted] = useState(false)
   const [formError, setFormError] = useState('')
+  console.log(props)
 
   const handleSubmit = async (
     values,

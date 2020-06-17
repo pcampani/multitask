@@ -15,31 +15,28 @@ import { LIST_RELATIONSHIPS, SOURCE_LIST_QUERY } from '../../source-props/list';
 
 // add styling here
 const ItemsStyleWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 `;
 
 //background wrapper for the task lists
 const Wrapper = styled.div`
-  margin-top: -24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 8vw;
+  width: 80vw;
+  height: 100vh;
+  z-index: -1;
   background-color: #f3f8fb;
-
+  padding: 120px 2rem 2rem 2rem;
   
 `;
 
 const TaskWrapper = styled.div`
-  margin: 40px auto 40px auto;
-  width: 320px;
   background: #fff;
   border-radius: 5px;
   box-shadow: 2px 2px 5px rgba(0,0,0,.5);
-  padding: 2px;
+  padding: 2rem 2px;
 
   h3 {
     text-align: left;
@@ -47,9 +44,14 @@ const TaskWrapper = styled.div`
     font-weight: lighter;
     padding: 10px 0 0 15px;
   }
-  
 
 `;
+
+const ItemWrapper = styled.div`
+  display: grid;
+  
+`;
+
 // np__added_end unit: list, comp: Items, loc: styling
 
 class Items extends Component {
@@ -115,7 +117,8 @@ class Items extends Component {
           return (
             <>
               <TaskWrapper>
-                {items.length !== 0 ? <h3>Active tasks</h3> : null}
+              {items.length !== 0 ? <h3>Active tasks</h3> : null}
+              <ItemWrapper >
               <ItemsStyleWrapper ref={this.wrapperRef} onClick={this.handleClick}>
                 { !items.length ?  <div style={{
                     width: "100%",
@@ -139,6 +142,7 @@ class Items extends Component {
                     )) 
                 }
               </ItemsStyleWrapper>
+              </ItemWrapper>
               </TaskWrapper>
               <ItemCreationForm  userId={ userId } refetchQueries={refetchQueries}/>
                 {/* np__added_start unit: list, comp: Items, loc: renderEnding */}

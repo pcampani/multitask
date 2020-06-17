@@ -6,14 +6,14 @@ import Header from '../Header';
 import frame from '../../assets/img/frame.png';
 import Footer from './Footer';
 
+const Container = styled.div` 
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+`;
 
 const Wrapper = styled.div`
-  
-  div.header {
-    margin: 0 auto;
-    height: 100px;
-    padding: 12px 52px;
-  }
 
   div.hero {
     display: flex;
@@ -64,17 +64,19 @@ const Wrapper = styled.div`
 
 export default function Welcome() {
   return (
-    <Header>
-      <Wrapper>
-        <div className="hero">
-          <img src={frame} alt="welcome image"/>
-          <h2>Get Serious.</h2>
-          <h2>Get Multitasking.</h2>
-          <Link className='button' to='signup'>Try it</Link>
-          <h4>Already have an account? <Link to='/login'>Log in</Link></h4>
-        </div>
-      </Wrapper>
-      <Footer />
-    </Header>
+    <Container>
+      <Header>
+        <Wrapper>
+          <div className="hero">
+            <img src={frame} alt="welcome image"/>
+            <h2>Get Serious.</h2>
+            <h2>Get Multitasking.</h2>
+            <Link className='button' to='signup'>Try it</Link>
+            <h4>Already have an account? <Link to='/login'>Log in</Link></h4>
+          </div>
+        </Wrapper>
+        <Footer />
+      </Header>
+    </Container>
   )
 }

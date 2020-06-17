@@ -8,9 +8,9 @@ const Container = styled.div`
   height: 60px;
   background-color: #081132;
   color: #fff;
-  width: 415px;
+  width: 100vw;
   position: absolute;
-  bottom: 0;
+  top: calc(100vh - 50px);
 `;
 
 export default function Footer() {

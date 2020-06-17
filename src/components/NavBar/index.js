@@ -7,7 +7,7 @@ import logo from '../../assets/img/logo.png';
 // change styling here
 const Wrapper = styled.div`
   box-sizing: border-box;
-  width: 415px;
+  width: 100vw;
   height: 100px;
   position: fixed;
   background-color: #fff;
@@ -22,23 +22,23 @@ const Wrapper = styled.div`
   text-transform: uppercase;
   z-index: 1000;
 
-  span {
-    position: absolute;
-    width: 100%;
-    height: .1px;
-    border-bottom: 5px solid rgba(0,0,0,.05);
-    top: 96px;
-    left: 0;
-  }
+`;
+
+const Nav = styled.nav`
+  width: 80vw;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
 `;
 
 const NavBar = () => (
   <Wrapper>
-    <img src={logo} alt="multitask logo"/>
-    <div>
-    <LogoutButton className='logout' />
-    </div>
-    <span>&nbsp;</span>
+    <Nav>
+      <img src={logo} alt="multitask logo"/>
+      <div>
+      <LogoutButton className='logout' />
+      </div>
+    </Nav>
   </Wrapper>
 );
 

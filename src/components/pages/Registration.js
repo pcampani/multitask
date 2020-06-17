@@ -33,7 +33,7 @@ const FormWrapper = styled.div`
   }
 `;
 
-const Login = () => (
+const Login = (props) => (
   <Header>
     <Wrapper className="App">
       <NoStackConsumer>
@@ -46,7 +46,7 @@ const Login = () => (
                 <LoginWrapper>
                   <FormWrapper>
                     <h2>Sign Up</h2>
-                    <RegistrationForm />
+                    <RegistrationForm props={props}/>
                   </FormWrapper>
                 </LoginWrapper>
             );

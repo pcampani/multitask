@@ -40,15 +40,14 @@ const ItemStyleWrapper = styled.div(({
 const Input = styled.input`
   display: inline-block;
   height: 50px;
-  width: 20px;
-  border: 1px solid #cdcdcd;
+  width: 27px;
+  border: 1px solid #c8d3d9;
   margin: 5px 0 0 40px;
   padding: 10px;
   z-index: 10;
 `;
 
 const TaskWrapper = styled.div`
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;

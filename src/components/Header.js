@@ -7,17 +7,29 @@ import logo from '../assets/img/logo-big.png';
 const Container = styled.div`
   display: grid;
   justify-content: center;
-  width: 100vw;
-  height: 100vh;
-  position: relative;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  
 `;
 
 const Wrapper = styled.div`
+  position: absolute;
+
   
   div.header {
-    margin: 0 auto;
+    top: 0;
+    left: 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
     height: 100px;
-    padding: 12px 52px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.3);
+  }
+
+  div.children {
+    margin-top: 2rem;
   }
 `;
 
@@ -29,7 +41,9 @@ export default function Header(props) {
         <div className="header">
           <img src={logo} alt="header logo"/>
         </div>
+        <div className='children'>
         {props.children}
+        </div>
       </Wrapper>
     </Container>
   )

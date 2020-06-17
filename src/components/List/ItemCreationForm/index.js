@@ -12,11 +12,16 @@ import { CREATE_ITEM_FOR_LIST_ACTION_ID
 
 const Wrapper = styled.div`
   display: flex;
-  width: 100%;
   align-items: center;
   height: 80px;
   justify-content: center;
   position: relative;
+  margin: 1rem 0;
+`;
+
+const InputWrapper = styled.div`
+  position: relative;
+  
 `;
 
 const Form = styled.div`
@@ -30,13 +35,14 @@ const Form = styled.div`
    padding: 1rem;
    border-radius: 10px;
    box-shadow: 5px 5px 10px #888888;
+   border: none;
   }
 
   button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 1.5rem;
+    right: 1rem;
   }
 `;
 
@@ -48,10 +54,11 @@ const Button = styled.button`
   border-radius: 30px;
   color: #fff;
   font-size: 2rem;
+  border: none;
 `;
 
 const TaskButton = styled(Button)`
-  width: 80%;
+  width: 320px;
   font-size: 20px;
 `;
 
@@ -105,6 +112,7 @@ function ItemCreationForm({ userId, createItem, refetchQueries }) {
 
   return (
     <Wrapper>
+      <InputWrapper>
       {isVisible ? <Form>
         <input
           id="item-value"
@@ -121,7 +129,7 @@ function ItemCreationForm({ userId, createItem, refetchQueries }) {
       </Button>
     </Form> :
     <TaskButton onClick={toggleForm}>Add a task +</TaskButton>}
-    
+      </InputWrapper>
   </Wrapper>
   );
 }
