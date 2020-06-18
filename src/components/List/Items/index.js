@@ -25,7 +25,7 @@ const Wrapper = styled.div`
   top: 0;
   left: 50%;
   width: 80vw;
-  height: 100vh;
+  height: calc(100vh - 150px);
   z-index: -1;
   background-color: #f3f8fb;
   padding: 120px 2rem 2rem 2rem;
@@ -145,8 +145,6 @@ class Items extends Component {
               </ItemWrapper>
               </TaskWrapper>
               <ItemCreationForm  userId={ userId } refetchQueries={refetchQueries}/>
-                {/* np__added_start unit: list, comp: Items, loc: renderEnding */}
-                {/* np__added_end unit: list, comp: Items, loc: renderEnding */}
             </>
           );
         }}

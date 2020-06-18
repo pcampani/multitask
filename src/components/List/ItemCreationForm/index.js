@@ -61,6 +61,7 @@ const Button = styled.button`
   color: #fff;
   font-size: 2rem;
   border: none;
+  cursor: pointer;
 `;
 
 const TaskButton = styled(Button)`

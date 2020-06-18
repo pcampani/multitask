@@ -19,7 +19,7 @@ const LoginWrapper = styled.div`
   align-items: center;
   background-color: #4aa5d4;
   padding: 0 10px;
-  height: 85vh;
+  height: calc(100vh - 110px);
 `;
 
 const FormWrapper = styled.div`

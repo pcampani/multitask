@@ -1,31 +1,73 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Form = styled.div`
- 
-  display: flex;
-  padding: 12px 15px;
+const Wrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,.3);
+  z-index: 1000;
+`;
 
-  input {
-    font-size: 20px;
-    padding-left: 50px;
-    width: 180px;
+const Form = styled.div`
+  display: flex;
+  border-radius: 5px;
+  height: 60px;
+  justify-content: center;
+  position: relative;
+ 
+  div {
+    position: relative;
+    position: absolute;
+   top: calc(100vh - 80px);
+   left: 50%;
+   transform: translateX(-50%);
   }
   
+  input {
+   width: 320px;
+   padding: 1rem;
+   border-radius: 10px;
+   box-shadow: 5px 5px 10px #888888;
+   border: none;
+   font-size: 1rem;
+   background: #fff;
+   
+  }
+
+  input:focus {
+    border: none;
+    outline: none;
+  }
+
+  button {
+    position: absolute;
+    top: .28rem;
+    right: 1rem;
+  }
 `;
 
 const Button = styled.button`
-  background: none;
+  width: 50px;
+  height: 40px;
+  background: #4AA5D4;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  color: #fff;
+  font-size: 2rem;
   border: none;
   cursor: pointer;
-  font-size: 1.25rem;
-  padding-right: 10px;
-  color: #bbbbbb;
-  transition: color 0.5s ease;
-  &:hover {
-    color: ${props => props.hoverColor || '#000000'};
+
+  &:focus {
+    border: none;
+    outline: none;
   }
 `;
+
+
 
 function EditInstanceForm({
   id,
@@ -37,7 +79,27 @@ function EditInstanceForm({
   disabled,
 }) {
   return (
-    <Form>
+    <Wrapper>
+      <Form>
+        <div>
+          <input
+            autoFocus
+            id={id}
+            type="text"
+            onChange={onChange}
+            value={ value }
+            disabled={disabled}
+          />
+          <Button variant="contained" color="primary"  onClick={onSave}>+</Button>
+        </div>
+        </Form> :
+    </Wrapper>
+  );
+}
+
+export default EditInstanceForm;
+
+{/* <Form>
       <label htmlFor={id}>
         {label}
         <input
@@ -64,8 +126,4 @@ function EditInstanceForm({
       >
         &#10005;
       </Button>
-    </Form>
-  );
-}
-
-export default EditInstanceForm;
+    </Form> */}

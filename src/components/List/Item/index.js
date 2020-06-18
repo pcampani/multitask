@@ -20,7 +20,7 @@ const ItemStyleWrapper = styled.div(({
   display: flex;
   width: 100%;
   align-items: center;
-  background-color: ${isDeleting ? '#e33371' : '#fff'};
+  background-color: ${isDeleting ? '#c8d3d9' : '#fff'};
   cursor: ${selected ? 'auto' : 'pointer'};
   font-size: 20px;
 
@@ -34,6 +34,29 @@ const ItemStyleWrapper = styled.div(({
 
   
 `);
+
+const Highlight = styled.div`
+  width: 100%;
+  background: #c8d3d9;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  input {
+    width: 50px;
+    height: 24px;
+    border-radius: 5px;
+  }
+
+  p.deleteTitle {
+    margin: 0;
+    color: #000;
+    font-size: 20px;
+  }
+
+  
+`;
+
 
 const Input = styled.input`
   display: inline-block;
@@ -155,7 +178,6 @@ function Item({
 
   if (isEditMode) {
     return (
-      <ItemStyleWrapper>
         <EditInstanceForm
           id={ item.id }
           value={ itemValue }
@@ -164,7 +186,6 @@ function Item({
           onCancel={handleCancelEdit}
           disabled={isSaving}
         />
-      </ItemStyleWrapper>
     );
   }
 
@@ -193,24 +214,25 @@ function Item({
 
   if (isDeleteMode) {
     return (
-      <ItemStyleWrapper
+      <Highlight
         selected={selected}
         isDeleting={isDeleting}
       >
-        { itemValue }
-        <DeleteInstanceMenu
+        <Input type="checkbox" disabled/>
+        <p className='deleteTitle'>{ itemValue }</p>
+        <DeleteInstanceMenu className='deleteIcon'
           onDelete={handleDelete}
           onCancel={handleCancelDelete}
           disabled={isDeleting}
         />
-      </ItemStyleWrapper>
+      </Highlight>
     );
   }
 
   return (
       <TaskWrapper>
         <Input type="checkbox"  value={itemValue} onChange={handleChange}/>
-        <ItemStyleWrapper ref={toggle} selected={selected}>
+        <ItemStyleWrapper selected={selected}>
           <div className="item">
             {  itemValue }
           </div>

@@ -7,6 +7,9 @@ import styled from 'styled-components';
 
 import RegistrationField from './RegistrationField'
 import {Wrapper, Row, ErrorContainer} from './RegistrationForm.style'
+import user from '../../assets/img/user.png';
+import lock from '../../assets/img/lock.png';
+import mail from '../../assets/img/mail.png';
 
 const initialValues = {
   name: '',
@@ -35,14 +38,8 @@ const Button = styled.button`
 
 const validationSchema = Yup.object().shape({
   name: Yup.string()
-  .label('name')
+  .label('userame')
   .required('Please enter desired username.'),
-  firstName: Yup.string()
-  .label('firstName')
-  .required('Please enter your first name.'),
-  lastName: Yup.string()
-  .label('lastName')
-  .required('Please enter your last name.'),
   email: Yup.string()
   .label('email')
   .email('Enter a valid email.')
@@ -55,10 +52,7 @@ const validationSchema = Yup.object().shape({
     'Must have at least one special character.',
   )
   .min(8, 'Must be at least 8 characters.')
-  .required('Please enter your desired password.'),
-  passwordConfirmation: Yup.string()
-  .oneOf([Yup.ref('password'), '', null], 'Passwords must match.')
-  .required('Please confirm your password.'),
+  .required('Please enter your desired password.')
 })
 
 const RegistrationForm = ({
@@ -125,28 +119,9 @@ const RegistrationForm = ({
       >
         {({isSubmitting, isValid, dirty, isValidating}) => (
           <Form>
-            <RegistrationField fieldLabel="User Name" type="text" name="name" bg="user"/>
-            <RegistrationField
-              fieldLabel="First Name"
-              type="text"
-              name="firstName"
-            />
-            <RegistrationField
-              fieldLabel="Last Name"
-              type="text"
-              name="lastName"
-            />
-            <RegistrationField fieldLabel="Email" type="email" name="email" />
-            <RegistrationField
-              fieldLabel="Password"
-              type="password"
-              name="password"
-            />
-            <RegistrationField
-              fieldLabel="Confirm Password"
-              type="password"
-              name="passwordConfirmation"
-            />
+            <RegistrationField fieldLabel="User Name" type="text" name="name" bg={user}/>
+            <RegistrationField fieldLabel="Password" type="password" name="password" bg={lock} />
+             <RegistrationField fieldLabel="Email" type="email" name="email" bg={mail}/>
             <Row>
               <Button
                 type="submit"

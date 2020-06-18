@@ -13,13 +13,25 @@ export const ErrorContainer = styled.div`
 `;
 
 export const Row = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0.5em;
   padding: 0.5em;
   text-align: center;
+  position: relative;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 1.5rem;
+    transform: translateY(-50%);
+  }
 
   input {
     display: block;
     margin: 0.5em auto;
     width: 80%;
+    text-indent: 12px;
   }
 `;

@@ -9,6 +9,7 @@ import Header from '../Header';
 const Wrapper = styled.div`
   width: 415px;
   margin: 0 auto;
+  height: 100%;
 `;
 
 //add form wrapper for styling
@@ -27,6 +28,7 @@ const FormWrapper = styled.div`
   width: 90%;
   border-radius: 5px;
   text-align: center;
+
 
   h2 {
     font-weight: 400;
