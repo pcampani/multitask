@@ -42,6 +42,11 @@ const Form = styled.div`
    box-shadow: 5px 5px 10px #888888;
    border: none;
    font-size: 1rem;
+
+   &:focus {
+     border: none;
+     outline: none;
+   }
   }
 
   button {
@@ -123,6 +128,7 @@ function ItemCreationForm({ userId, createItem, refetchQueries }) {
       <InputWrapper>
         {isVisible ? <Form>
           <input
+            autoFocus
             id="item-value"
             type="text"
             onChange={handleChange}

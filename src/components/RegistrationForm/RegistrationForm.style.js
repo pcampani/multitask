@@ -23,9 +23,8 @@ export const Row = styled.div`
 
   img {
     position: absolute;
-    top: 50%;
+    top: 2rem;
     left: 1.5rem;
-    transform: translateY(-50%);
   }
 
   input {

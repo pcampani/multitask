@@ -36,11 +36,13 @@ const ItemStyleWrapper = styled.div(({
 `);
 
 const Highlight = styled.div`
+  box-sizing: border-box;
   width: 100%;
   background: #c8d3d9;
   display: flex;
   align-items: center;
   position: relative;
+  padding: .8rem 0;
 
   input {
     width: 50px;
